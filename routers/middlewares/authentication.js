@@ -6,7 +6,8 @@ const authentication = (req, res, next) => {
     const valid = jwt.verify(token, "ABC");
     req.token = valid;
     next();
-  } catch (error) {
+  } 
+  catch (error) {
     res.status(403);
     res.send(error);
   }
